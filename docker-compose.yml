@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  db:
+    image: postgres:10.12
+    volumes:
+      - '${DOCKER_VOLUMES_DIR}/hurontg/learnboot/postgres:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_USER: learnboot_user
+      POSTGRES_PASSWORD: learnboot_password
+      POSTGRES_DB: learnboot
+    ports:
+      - 5432:5432
